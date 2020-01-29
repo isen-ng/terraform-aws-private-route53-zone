@@ -6,6 +6,11 @@ locals {
 resource "aws_route53_zone" "main" {
   name = "${var.name}"
 
+  lifecycle {
+    ignore_changes = ["vpc"]
+  }
+
+  # you must have a main vpc to indicate that this zone is a private zone
   vpc {
     vpc_id = "${var.main_vpc}"
   }
