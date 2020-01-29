@@ -12,7 +12,7 @@ resource "aws_route53_zone" "main" {
 
   # you must have a main vpc to indicate that this zone is a private zone
   vpc {
-    vpc_id = "${var.main_vpc}"
+    #vpc_id = "${var.main_vpc}"
   }
 
   comment       = "${local.description}"
